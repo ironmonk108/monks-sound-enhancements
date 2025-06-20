@@ -1,0 +1,21 @@
+{{#with currentlyPlaying}}
+<div class="currently-playing global-control {{ class }}">
+    <header class="playlist-header" data-action="currentExpand">
+        <div class="header-wrapper">
+            <i class="expand fa-solid fa-angle-up" inert></i>
+            <strong>{{ localize "PLAYLIST.CurrentlyPlaying" }}</strong>
+        </div>
+        <button type="button" class="inline-control pin icon fa-solid fa-thumbtack{{ pin.thumbtack }}"
+                data-tooltip aria-label="{{ localize pin.label }}" data-action="pinCurrentlyPlaying"></button>
+    </header>
+    <div class="expandable">
+        <div class="wrapper">
+            <ol class="playlist-sounds plain">
+                {{#each sounds}}
+                {{> "modules/monks-sound-enhancements/templates/sound-partial.hbs" playback=true }}
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+</div>
+{{/with}}

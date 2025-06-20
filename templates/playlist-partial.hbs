@@ -1,0 +1,37 @@
+{{#unless (and hidden (not isOwner))}}
+<li class="directory-item document {{ @root.documentCls }} {{ css }}" data-entry-id="{{ id }}" data-tooltip="{{{ tooltip }}}">
+    <header class="playlist-header" data-action="activateEntry">
+        <i class="expand fa-solid fa-angle-up" inert></i>
+        {{#if hidden}}
+        <i class="fas fa-eye-slash" inert></i>
+        {{/if}}
+        <label class="entry-name playlist-name ellipsis">{{ name }}</label>
+        {{#if isOwner}}
+        <div class="sound-controls playlist-controls flexrow">
+            <button type="button" class="inline-control sound-control icon {{ mode.icon }}" data-action="playlistMode"
+                    {{#unless isOwner}} disabled{{/unless}} data-tooltip aria-label="{{ localize mode.label }}"></button>
+            {{#if playing}}
+            <button type="button" class="inline-control sound-control icon fa-solid fa-backward" {{ disabled disabled }}
+                    data-action="playlistBackward" data-tooltip aria-label="{{ localize "PLAYLIST.Backward" }}"></button>
+            <button type="button" class="inline-control sound-control icon fa-solid fa-forward" {{ disabled disabled }}
+                    data-action="playlistForward" data-tooltip aria-label="{{ localize "PLAYLIST.Forward" }}"></button>
+            <button type="button" class="inline-control sound-control icon fa-solid fa-square" {{ disabled disabled }}
+                    data-action="playlistStop" data-tooltip aria-label="{{ localize "PLAYLIST.Stop" }}"></button>
+            {{else}}
+            <button type="button" class="inline-control sound-control icon fa-solid fa-play" {{ disabled disabled }}
+                    data-action="playlistPlay" data-tooltip aria-label="{{ localize "PLAYLIST.Play" }}"></button>
+            {{/if}}
+        </div>
+        {{/if}}
+    </header>
+    <div class="expandable">
+        <div class="wrapper">
+            <ol class="playlist-sounds plain">
+                {{#each sounds}}
+                {{> "modules/monks-sound-enhancements/templates/sound-partial.hbs" playback=false }}
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+</li>
+{{/unless}}

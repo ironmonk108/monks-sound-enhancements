@@ -1,7 +1,7 @@
 import { MonksSoundEnhancements, i18n } from "./monks-sound-enhancements.js"
 
 export const registerSettings = function () {
-    // Register any custom module settings here
+	// Register any custom module settings here
 	let modulename = "monks-sound-enhancements";
 
 	let actorsoundsoptions = {
@@ -24,7 +24,7 @@ export const registerSettings = function () {
 		type: Boolean,
 		onChange: (value) => {
 			$('#playlists').toggleClass('sound-enhancement', value);
-        }
+		}
 	});
 
 	game.settings.register(modulename, "actor-sounds", {
@@ -70,7 +70,7 @@ export const registerSettings = function () {
 		type: Boolean,
 		onChange: () => {
 			MonksSoundEnhancements.emit("render");
-        }
+		}
 	});
 
 	game.settings.register(modulename, "playlist-show-description", {
@@ -83,6 +83,15 @@ export const registerSettings = function () {
 		onChange: () => {
 			game.playlists.render();
 		}
+	});
+
+	game.settings.register(modulename, "playsound-duration", {
+		name: i18n("MonksSoundEnhancements.playsound-duration.name"),
+		hint: i18n("MonksSoundEnhancements.playsound-duration.hint"),
+		scope: "world",
+		config: true,
+		default: true,
+		type: Boolean
 	});
 
 	game.settings.register("core", "globalSoundEffectVolume", {

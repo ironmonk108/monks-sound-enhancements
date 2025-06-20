@@ -1,0 +1,40 @@
+<div class="global-volume global-control {{#if controls.expanded}}expanded{{/if}}">
+    <header class="playlist-header" data-action="volumeExpand">
+        <i class="expand fa-solid fa-angle-up" inert></i>
+        <strong>{{ localize "PLAYLIST.VOLUME.CONTROLS" }}</strong>
+    </header>
+    <div class="expandable">
+        <div class="wrapper">
+            <ol class="plain">
+                <li class="flexrow" data-tooltip="AUDIO.CHANNELS.MUSIC.tooltip">
+                    <label>{{ localize "AUDIO.CHANNELS.MUSIC.label" }}</label>
+                    <i class="volume-icon fa-solid fa-volume-low" inert></i>
+                    {{#with controls.music}}
+                    {{formInput field classes="global-volume-slider" name=name value=modifier dataset=dataset aria=aria}}
+                    {{/with}}
+                </li>
+                <li class="flexrow" data-tooltip="AUDIO.CHANNELS.ENVIRONMENT.tooltip">
+                    <label>{{ localize "AUDIO.CHANNELS.ENVIRONMENT.label" }}</label>
+                    <i class="volume-icon fa-solid fa-volume-low" inert></i>
+                    {{#with controls.environment}}
+                    {{formInput field classes="global-volume-slider" name=name value=modifier dataset=dataset aria=aria}}
+                    {{/with}}
+                </li>
+                <li class="flexrow" data-tooltip="AUDIO.CHANNELS.INTERFACE.tooltip">
+                    <label>{{ localize "AUDIO.CHANNELS.INTERFACE.label" }}</label>
+                    <i class="volume-icon fa-solid fa-volume-low" inert></i>
+                    {{#with controls.interface}}
+                    {{formInput field classes="global-volume-slider" name=name value=modifier dataset=dataset aria=aria}}
+                    {{/with}}
+                </li>
+                <li class="flexrow" data-tooltip="MonksSoundEnhancements.SoundEffectTooltip">
+                    <label>{{ localize "MonksSoundEnhancements.SoundEffect" }}</label>
+                    <i class="volume-icon fa-solid fa-volume-low" inert></i>
+                    {{#with controls.soundeffect}}
+                    {{formInput field classes="global-volume-slider" name=name value=modifier dataset=dataset aria=aria}}
+                    {{/with}}
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>

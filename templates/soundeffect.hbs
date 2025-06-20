@@ -1,0 +1,17 @@
+{{#with soundEffects}}
+<div class="sound-effects global-control {{ class }}">
+    <header class="playlist-header" data-action="soundEffectsExpand">
+        <i class="expand fa-solid fa-angle-up" inert></i>
+        <strong>{{ localize "MonksSoundEnhancements.SoundEffect" }}</strong>
+    </header>
+    <div class="expandable">
+        <div class="wrapper">
+            <ol class="playlist-sounds plain">
+                {{#each sounds}}
+                {{> "modules/monks-sound-enhancements/templates/sound-effect-partial.hbs" playback=true }}
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+</div>
+{{/with}}

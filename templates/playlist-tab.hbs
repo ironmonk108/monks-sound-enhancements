@@ -1,0 +1,9 @@
+<div class="tab scrollable{{#if tab.active}} active{{/if}}" data-group="{{tab.group}}" data-tab="{{tab.id}}">
+    {{formGroup fields.name value=source.name rootId=rootId}}
+    {{formGroup fields.mode value=source.mode choices=modes rootId=rootId}}
+    {{formGroup fields.channel value=source.channel choices=channels rootId=rootId}}
+    {{formGroup fields.sorting value=source.sorting choices=sortModes rootId=rootId}}
+    {{formGroup fields.fade value=source.fade placeholder="0" classes="slim" rootId=rootId units=milliseconds}}
+    {{formGroup fields.hideplaylist value=source.flags.monks-sound-enhancements.hide-playlist rootId=rootId}}
+    {{formGroup fields.description value=source.description compact=true rootId=rootId classes="stacked" elementType="prose-mirror"}}
+</div>

@@ -1,0 +1,25 @@
+<li class="sound effect {{ css }}" data-sound-id="{{ id }}">
+    <header>
+        <i class="fa-thin fa-file-audio" inert></i>
+        <label class="ellipsis">{{ name }}</label>
+    </header>
+
+    {{#if playback}}
+    <div class="sound-playback flexrow">
+        <div class="sound-timer">
+            <span class="current">{{ currentTime }}</span>
+            <span class="sep">&sol;</span>
+            <span class="duration">{{ duration }}</span>
+        </div>
+        <i class="volume-icon fa-solid fa-volume-low" inert></i>
+        {{#with volume}}
+        {{ formInput field classes="sound-volume" value=modifier dataset=dataset aria=aria }}
+        {{/with}}
+        {{#if isOwner}}
+        <button type="button" class="inline-control sound-control icon fa-solid fa-square" data-action="effectStop"
+            {{#unless isOwner}} disabled{{/unless}} data-tooltip
+            aria-label="{{ localize "PLAYLIST.SoundStop" }}"></button>
+        {{/if}}
+    </div>
+    {{/if}}
+</li>

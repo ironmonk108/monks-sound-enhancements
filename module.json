@@ -1,13 +1,13 @@
 {
   "title": "Monk's Sound Enhancements",
   "description": "You can now see what sound files are included in the compendium playlists, preview each file, and then drag and drop individual files.  And if you want to import the play list, you can now select individual files to include in the import, rather than importing the entire list.",
-  "version": "12.03",
+  "version": "13.01",
   "authors": [
     {
       "name": "IronMonk",
-      "discord": "ironmonk88#4075",
+      "discord": "ironmonk108",
 	  "flags": {
-		  "github": "ironmonk88",
+		  "github": "ironmonk108",
 		  "patreon": "ironmonk",
 		  "ko-fi": "ironmonk88"
 	  }
@@ -28,18 +28,18 @@
   "styles": [
     "css/monks-sound-enhancements.css"
   ],
-  "url": "https://github.com/ironmonk88/monks-sound-enhancements",
-  "download": "https://github.com/ironmonk88/monks-sound-enhancements/archive/12.03.zip",
-  "manifest": "https://github.com/ironmonk88/monks-sound-enhancements/releases/latest/download/module.json",
-  "bugs": "https://github.com/ironmonk88/monks-sound-enhancements/issues",
+  "url": "https://github.com/ironmonk108/monks-sound-enhancements",
+  "download": "https://github.com/ironmonk108/monks-sound-enhancements/archive/13.01.zip",
+  "manifest": "https://github.com/ironmonk108/monks-sound-enhancements/releases/latest/download/module.json",
+  "bugs": "https://github.com/ironmonk108/monks-sound-enhancements/issues",
   "id": "monks-sound-enhancements",
   "compatibility": {
-    "minimum": "12",
-    "verified": "12"
+    "minimum": "13",
+    "verified": "13"
   },
   "name": "monks-sound-enhancements",
-  "minimumCoreVersion": "12",
-  "compatibleCoreVersion": "12",
+  "minimumCoreVersion": "13",
+  "compatibleCoreVersion": "13",
   "flags": {
     "allowBugReporter": true
   }

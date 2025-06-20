@@ -1,3 +1,9 @@
+# Version 13.01
+
+v13 Compatibility
+
+Switched the play mode button from cycling through each item to a drop down, so you can actually pick what you want the mode to be.
+
 # Version 12.03
 
 Fixed a bug
