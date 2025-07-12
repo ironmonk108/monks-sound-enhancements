@@ -193,17 +193,17 @@ export class MSE_PlaylistDirectory extends CONFIG.ui.playlists {
     }
 
 
-    static onSelectSound(event) {
+    static onSelectSound(event, target) {
         if (game.user.isGM) {
-            const soundId = event.currentTarget.closest("li.sound").dataset.soundId;
-
-            const sound = this.document.sounds.get(soundId);
+            const { playlistId, soundId } = target.closest(".sound")?.dataset ?? {};
+            const playlist = game.playlists.get(playlistId);
+            const sound = playlist?.sounds.get(soundId);
             if (sound) {
                 const allowed = Hooks.call("clickPlaylistSound", sound, game.user.id);
                 if (!allowed) return;
 
                 if (!sound.playing)
-                    this.document.playSound(sound);
+                    playlist.playSound(sound);
                 else
                     sound.update({ playing: false, pausedTime: sound.currentTime });
             }

@@ -1,3 +1,7 @@
+# Version 13.02
+
+Fixing bug playing a selected sound
+
 # Version 13.01
 
 v13 Compatibility
