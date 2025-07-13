@@ -1,0 +1,42 @@
+{
+  "MonksSoundEnhancements.change-style.name": "Zmiana stylu listy odtwarzania",
+  "MonksSoundEnhancements.change-style.hint": "Dodaj dodatkowe style, aby było nieco bardziej oczywiste, które utwory są odtwarzane.",
+  "MonksSoundEnhancements.actor-sounds.name": "Efekty dźwiękowe aktora",
+  "MonksSoundEnhancements.actor-sounds.hint": "Dodanie przycisku do karty postaci i TokenHUD, aby odtworzyć efekt dźwiękowy.",
+  "MonksSoundEnhancements.item-sounds.name": "Efekty dźwiękowe przedmiotów",
+  "MonksSoundEnhancements.item-sounds.hint": "Dodaj przycisk do karty przedmiotu, aby odtworzyć efekt dźwiękowy.",
+  "MonksSoundEnhancements.playlist-hide-names.name": "Domyślne ukryte nazwy",
+  "MonksSoundEnhancements.playlist-hide-names.hint": "Ukryta lista odtwarzania automatycznie zasłoni nazwy dźwięków",
+  "MonksSoundEnhancements.playsound-combat.name": "Dźwięk walki",
+  "MonksSoundEnhancements.playsound-combat.hint": "Odtwarzaj dźwięk aktora, gdy nadejdzie jego kolej w walce",
+  "MonksSoundEnhancements.playlist-show-description.name": "Wyświetl opis listy odtwarzania",
+  "MonksSoundEnhancements.playlist-show-description.hint": "Wyświetlanie opisu listy odtwarzania jako podpowiedzi",
+  "MonksSoundEnhancements.playsound-duration.name": "Okres trwania ładowania",
+  "MonksSoundEnhancements.playsound-duration.hint": "Wczytywanie czasu trwania efektu dźwiękowego podczas edycji listy odtwarzania",
+
+  "MonksSoundEnhancements.Add": "Dodaj",
+  "MonksSoundEnhancements.Delete": "Usuń",
+  "MonksSoundEnhancements.HideSoundNames": "Ukryj nazwę dźwięku przed graczami",
+  "MonksSoundEnhancements.HidePlaylistHint": "Ukryj nazwę listy odtwarzania przed graczami",
+  "MonksSoundEnhancements.ActorSound": "Dźwięk aktora",
+  "MonksSoundEnhancements.ItemSound": "Dźwięk przedmiotu",
+  "MonksSoundEnhancements.AudioFile": "Plik audio",
+  "MonksSoundEnhancements.Volume": "Głośność",
+  "MonksSoundEnhancements.SaveSound": "Zapisz dźwięk",
+  "MonksSoundEnhancements.HidePlaylist": "Ukryj listę odtwarzania",
+  "MonksSoundEnhancements.RevealPlaylist": "Ujawnij listę odtwarzania",
+  "MonksSoundEnhancements.HideSoundName": "Ukryj nazwę dźwięku",
+  "MonksSoundEnhancements.RevealSoundName": "Ujawnij nazwę dźwięku",
+  "MonksSoundEnhancements.AddSoundEffect": "Dodaj efekt dźwiękowy",
+  "MonksSoundEnhancements.SoundEffect": "Efekt dźwiękowy",
+  "MonksSoundEnhancements.SoundEffectTooltip": "Kontroluje lokalną głośność efektów dźwiękowych.",
+
+  "MonksSoundEnhancements.actorsoundsoptions.none": "Brak",
+  "MonksSoundEnhancements.actorsoundsoptions.npc": "BN",
+  "MonksSoundEnhancements.actorsoundsoptions.everyone": "Każdy",
+
+  "MonksSoundEnhancements.PLAYLIST.TABS": {
+    "playlist": "Lista odtwarzania",
+    "sounds": "Dźwięki"
+  }
+}
