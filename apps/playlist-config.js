@@ -269,6 +269,9 @@ export class MSE_PlaylistConfig extends foundry.applications.sheets.PlaylistConf
                     } catch { }
                     playButton.attr("data-tooltip", "Play Sound").addClass("fa-play").removeClass("fa-stop active");
                 }
+                else if (playlist._sounds[soundId].failed) {
+                    playButton.attr("data-tooltip", "Failed to Load").addClass("fa-exclamation-triangle").removeClass("fa-play fa-stop active");
+                }
                 else {
                     await playlist._sounds[soundId].load();
                     playlist._sounds[soundId].play({ volume: 1 });
@@ -279,23 +282,27 @@ export class MSE_PlaylistConfig extends foundry.applications.sheets.PlaylistConf
             playButton.attr("data-tooltip", "Loading Sound").removeClass("fa-play").addClass("fa-sync");
             playlist._sounds[soundId] = 'loading';
             foundry.audio.AudioHelper.play({ src: sound.path, volume: 1, loop: false }, false).then((sound) => {
-                sound.addEventListener("stop", () => {
-                    playButton.attr("data-tooltip", "Play Sound").addClass("fa-play").removeClass("fa-sync fa-stop active");
-                });
-                sound.addEventListener("end", () => {
-                    playButton.attr("data-tooltip", "Play Sound").addClass("fa-play").removeClass("fa-sync fa-stop active");
-                });
-
-                $(`.mse-playlist-config .sound[data-sound-id="${soundId}"] .duration`).html(this.getDuration(sound, true));
-
-                if (playlist._sounds[soundId] == "stop") {
-                    playlist._sounds[soundId] = sound;
-                    try {
-                        sound.stop();
-                    } catch { }
+                if (sound.failed) {
+                    playButton.attr("data-tooltip", "Failed to Load").addClass("fa-exclamation-triangle").removeClass("fa-play fa-stop active");
                 } else {
-                    playlist._sounds[soundId] = sound;
-                    playButton.attr("data-tooltip", "Stop Sound").removeClass("fa-sync").addClass("fa-stop active");
+                    sound.addEventListener("stop", () => {
+                        playButton.attr("data-tooltip", "Play Sound").addClass("fa-play").removeClass("fa-sync fa-stop active");
+                    });
+                    sound.addEventListener("end", () => {
+                        playButton.attr("data-tooltip", "Play Sound").addClass("fa-play").removeClass("fa-sync fa-stop active");
+                    });
+
+                    $(`.mse-playlist-config .sound[data-sound-id="${soundId}"] .duration`).html(this.getDuration(sound, true));
+
+                    if (playlist._sounds[soundId] == "stop") {
+                        playlist._sounds[soundId] = sound;
+                        try {
+                            sound.stop();
+                        } catch { }
+                    } else {
+                        playlist._sounds[soundId] = sound;
+                        playButton.attr("data-tooltip", "Stop Sound").removeClass("fa-sync").addClass("fa-stop active");
+                    }
                 }
             });
         }
@@ -314,8 +321,14 @@ export class MSE_PlaylistConfig extends foundry.applications.sheets.PlaylistConf
         // Define the URL of the MP3 audio file
         au.src = sound.path;
 
+        let durationTimer = setTimeout(() => {
+            $(`li[data-sound-id="${sound.id}"] .duration`).html("-");
+            $(`li[data-sound-id="${sound.id}"] a[data-action="playSound"] i`).attr("data-tooltip", "Failed to Load").addClass("fa-exclamation-triangle").removeClass("fa-play fa-stop active");
+        }, 5000);
+
         // Once the metadata has been loaded, display the duration in the console
         au.addEventListener('loadedmetadata', function () {
+            clearTimeout(durationTimer);
             // Obtain the duration in seconds of the audio file (with milliseconds as well, a float value)
             var duration = au.duration;
 

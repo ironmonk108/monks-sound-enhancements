@@ -1,7 +1,7 @@
 {
   "title": "Monk's Sound Enhancements",
   "description": "You can now see what sound files are included in the compendium playlists, preview each file, and then drag and drop individual files.  And if you want to import the play list, you can now select individual files to include in the import, rather than importing the entire list.",
-  "version": "13.02",
+  "version": "14.01",
   "authors": [
     {
       "name": "IronMonk",
@@ -34,17 +34,14 @@
     "css/monks-sound-enhancements.css"
   ],
   "url": "https://github.com/ironmonk108/monks-sound-enhancements",
-  "download": "https://github.com/ironmonk108/monks-sound-enhancements/archive/13.02.zip",
+  "download": "https://github.com/ironmonk108/monks-sound-enhancements/archive/14.01.zip",
   "manifest": "https://github.com/ironmonk108/monks-sound-enhancements/releases/latest/download/module.json",
   "bugs": "https://github.com/ironmonk108/monks-sound-enhancements/issues",
   "id": "monks-sound-enhancements",
   "compatibility": {
-    "minimum": "13",
-    "verified": "13"
+    "minimum": "14",
+    "verified": "14"
   },
-  "name": "monks-sound-enhancements",
-  "minimumCoreVersion": "13",
-  "compatibleCoreVersion": "13",
   "flags": {
     "allowBugReporter": true
   }

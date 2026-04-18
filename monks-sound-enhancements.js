@@ -3,7 +3,6 @@ import { registerSettings } from "./settings.js";
 import { MonksSoundEnhancementsAPI } from "./monks-sound-enhancements-api.js";
 import { MSE_PlaylistConfig } from "./apps/playlist-config.js";
 import { MSE_PlaylistDirectory } from "./apps/playlist-directory.js";
-import { soundfileinit } from "./plugins/soundfile.plugin.js"
 
 export let debug = (...args) => {
     if (debugEnabled > 1) console.log("DEBUG: monks-sound-enhancements | ", ...args);
@@ -51,7 +50,7 @@ export class MonksSoundEnhancements {
                     if (token) {
                         if (token.soundeffect?.playing) {
                             token.soundeffect.fade(0, { duration: 250 }).then(() => {
-                                token.soundeffect.stop();
+                                token.soundeffect?.stop();
                                 delete token.soundeffect;
                             });
                         } else
@@ -173,8 +172,6 @@ export class MonksSoundEnhancements {
 
     static ready() {
         game.socket.on(MonksSoundEnhancements.SOCKET, MonksSoundEnhancements.onMessage);
-
-        tinyMCE.PluginManager.add('soundeffect', soundfileinit);
 
         ui.playlists._currentExpanded = true;
 

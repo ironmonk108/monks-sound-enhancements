@@ -1,3 +1,9 @@
+# Version 14.01
+
+v14 Compatibility
+
+Fixed issues when a sound file fails to load
+
 # Version 13.02
 
 Fixing bug playing a selected sound
